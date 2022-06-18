@@ -3,7 +3,9 @@ Simple python script for self describing LTO backups on tapes
 
 # Requirements
 
-    mt-st  (In linux there are mt-gnu and mt-st packages, almost similar but different!)
+In linux there are mt-gnu and mt-st packages, almost similar but different!
+    
+    mt-st  
 
 # Install
     
