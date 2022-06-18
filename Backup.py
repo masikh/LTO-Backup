@@ -120,17 +120,19 @@ class Backup:
 
 
 if __name__ == '__main__':
-    parser = ArgumentParser()
-    parser.add_argument('-d', '--device', type=str, default='/dev/nst0', help='Set tape device (default: /dev/nst0)')
+    parser = ArgumentParser(description='(c) GPLv3. A simple python script to write TAR archives to tape. '
+                                        'A tape manifest is write in the first file on tape and updated on each '
+                                        'additional backup')
+    parser.add_argument('-d', '--device', type=str, metavar='device-file', default='/dev/nst0', help='Set tape device (default: /dev/nst0)')
     commands = parser.add_mutually_exclusive_group()
-    commands.add_argument('-I', '--initialize_tape', action='store_true', help='Write empty index to beginning of tape. Size is 104857600 byte')
+    commands.add_argument('-I', '--initialize_tape', action='store_true', help='Write empty index to beginning of tape. Size is 104857600 byte (100Mb)')
     commands.add_argument('-L', '--load_tape_index', action='store_true', help='Load/Show index on tape')
     commands.add_argument('-E', '--eject', action='store_true', help='Eject tape')
     commands.add_argument('-r', '--rewind', action='store_true', help='Rewind tape')
     commands.add_argument('-e', '--end_of_logical_tape', action='store_true', help='Set tape position after last archive')
-    commands.add_argument('-R', '--restore', type=str, default=None, help='Restore tape archive at current index to destination')
+    commands.add_argument('-R', '--restore', type=str, default=None, metavar='target-dir', help='Restore tape archive at current index to destination')
     commands.add_argument('-s', '--status', action='store_true', help='Show drive status')
-    commands.add_argument('-b', '--backup_directory', nargs="*", help='Write contents of given directories to tape after the last file')
+    commands.add_argument('-b', '--backup_directory', nargs="*", metavar='dir', help='Write contents of given directories to tape after the last archive')
     commands.add_argument("-i", "--set_tape_to_index", type=int, default=None, help="The tape is positioned at the beginning of the file at index. Index 0 is reserved for the Tape-manifest, 1..N are for archives. The tape is first rewinded.")
 
     args = parser.parse_args()
