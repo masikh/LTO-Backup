@@ -133,7 +133,7 @@ if __name__ == '__main__':
     commands.add_argument('-R', '--restore', type=str, default=None, metavar='target-dir', help='Restore tape archive at current index to destination')
     commands.add_argument('-s', '--status', action='store_true', help='Show drive status')
     commands.add_argument('-b', '--backup_directory', nargs="*", metavar='dir', help='Write contents of given directories to tape after the last archive')
-    commands.add_argument("-i", "--set_tape_to_index", type=int, default=None, help="The tape is positioned at the beginning of the file at index. Index 0 is reserved for the Tape-manifest, 1..N are for archives. The tape is first rewinded.")
+    commands.add_argument("-i", "--set_tape_to_index", type=int, metavar='<int>', default=None, help="The tape is positioned at the beginning of the file at index. Index 0 is reserved for the Tape-manifest, 1..N are for archives. The tape is first rewinded.")
 
     args = parser.parse_args()
     backup = Backup(tape_device=args.device)

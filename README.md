@@ -34,6 +34,6 @@ In linux there are mt-gnu and mt-st packages, almost similar but different!
       -s, --status          Show drive status
       -b [dir [dir ...]], --backup_directory [dir [dir ...]]
                             Write contents of given directories to tape after the last archive
-      -i SET_TAPE_TO_INDEX, --set_tape_to_index SET_TAPE_TO_INDEX
+      -i <int>, --set_tape_to_index <int>
                             The tape is positioned at the beginning of the file at index. Index 0 is reserved for the Tape-manifest, 1..N are for archives. The tape
                             is first rewinded.
