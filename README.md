@@ -1,9 +1,12 @@
 # LTO-Backup
 Simple python script for self describing LTO backups on tapes
 
+# Requirements
+
+    mt-st  (In linux there are mt-gnu and mt-st packages, almost similar but different!)
+
 # Install
     
-    pip3 install -r requirements.txt
     chmod +x Backup.py
 
 # Usage
