@@ -3,7 +3,6 @@ Simple python script for self describing LTO backups on tapes
 
 # Install
     
-    pip3 install -r requirements.txt
     chmod +x Backup.py
 
 # Usage
