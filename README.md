@@ -15,8 +15,13 @@ In linux there are mt-gnu and mt-st packages, almost similar but different!
 
     usage: Backup.py [-h] -l label [-d device-file] [-E | -r | -e | -R target-dir | -s | -b [dir [dir ...]] | -i <int>]
 
-    (c) GPLv3. A simple python script to write TAR archives to tape. A tape manifest is write in the first file on tape and updated on each
-    additional backup
+    Copyright: (c) GPLv3 (20 june 2022)
+    Author: Robert Nagtegaal
+    
+    Description:
+    A simple python script to write TAR archives to tape. You need to give a label (name) for the tape. 
+    This label is used as filename for keeping a manifest. Manifests are kept in /var/LTO-Backup. 
+    This program relies on mt-gnu.
     
     optional arguments:
       -h, --help            show this help message and exit
@@ -35,4 +40,3 @@ In linux there are mt-gnu and mt-st packages, almost similar but different!
                             Write contents of given directories to tape after the last archive
       -i <int>, --set_tape_to_index <int>
                             The tape is positioned at the beginning of the file at index <int>
-

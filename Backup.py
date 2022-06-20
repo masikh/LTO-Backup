@@ -103,9 +103,14 @@ class Backup:
 
 
 if __name__ == '__main__':
-    parser = ArgumentParser(description='(c) GPLv3. A simple python script to write TAR archives to tape. '
-                                        'A tape manifest is write in the first file on tape and updated on each '
-                                        'additional backup')
+    from argparse import RawTextHelpFormatter
+    parser = ArgumentParser(formatter_class=RawTextHelpFormatter,
+                            description='Copyright: (c) GPLv3 (20 june 2022)\n'
+                                        'Author: Robert Nagtegaal\n\n'
+                                        'Description:\n'
+                                        'A simple python script to write TAR archives to tape. You need to give a label '
+                                        '(name) for the tape. This label is used as filename for keeping a manifest. '
+                                        'Manifests are kept in /var/LTO-Backup. This program relies on mt-gnu.')
     parser.add_argument('-l', '--label', type=str, metavar='label', required=True,
                         help='Set tape label (name of manifest in /var/LTO-Backup')
     parser.add_argument('-d', '--device', type=str, metavar='device-file', default='/dev/nst0',
