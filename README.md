@@ -1,4 +1,6 @@
 # LTO-Backup
+
+[![Language](https://img.shields.io/github/languages/top/masikh/LTO-Backup)](https://github.com/masikh/LTO-Backup) [![Last commit](https://img.shields.io/github/last-commit/masikh/LTO-Backup)](https://github.com/masikh/LTO-Backup/commits) [![Repo size](https://img.shields.io/github/repo-size/masikh/LTO-Backup)](https://github.com/masikh/LTO-Backup) [![Stars](https://img.shields.io/github/stars/masikh/LTO-Backup?style=flat)](https://github.com/masikh/LTO-Backup/stargazers)
 Simple python script for self describing LTO backups on tapes
 
 # Requirements
